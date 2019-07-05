@@ -9,9 +9,11 @@ The Client-Side Encryption (CSE) integration lets you accept payments on your we
 ## Client Side
 Start by creating a payment form integrated with the Client-Side Encryption (CSE) library. Ensure that your payment form includes the mandatory fields. You may replace the [payment_action] with your payment process URL, [public_key] with public key provided from RMS and [cse_url] for our encryption library.
 
-To ensures that the call does not send unencrypted card data to your server, you must encrypt card input fields by annotating them with the `data-encrypted-name` attribute. 
+To ensures that the call does not send unencrypted card data to your server, you must encrypt card input fields by annotating them with the `data-encrypted-name` attribute.  
 **Do not** use the `name` attribute.
 
+Production URL: https://www.onlinepayment.com.my/MOLPay/API/cse/checkout.js  
+Sandbox URL: https://sandbox.molpay.com/MOLPay/API/cse/checkout.js
 
 ```html
 <script src="[cse_url]"></script>
