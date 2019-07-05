@@ -27,5 +27,5 @@ To ensures that the call does not send unencrypted card data to your server, you
   molpay.onSubmitEncryptForm('molpay-payment-form');
 </script>
 ```        
-## Server side
+## Server Side
 From server, make an HTTP POST request to our Direct Server API endpoint. Please refer to our Direct Server API for payment request and response.
