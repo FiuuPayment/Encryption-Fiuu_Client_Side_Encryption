@@ -13,7 +13,7 @@ To ensures that the call does not send unencrypted card data to your server, you
 **Do not** use the `name` attribute.
 
 ```html
-<script src="https://sandbox.molpay.com/MOLPay/API/cse/checkout.js"></script>
+<script src="https://sandbox.merchant.razer.com/RMS/API/cse/checkout.js"></script>
 <form action="[payment_action]" method="POST" id="molpay-payment-form">
   <input type="text" size="20" data-encrypted-name="PAN" placeholder="CC NUM" maxlength="16" required/>
   <input type="text" size="20" data-encrypted-name="CVV" placeholder="CVV" maxlength="3" required/>
