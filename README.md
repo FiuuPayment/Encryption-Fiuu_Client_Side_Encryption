@@ -1,5 +1,5 @@
 
-# Client-Side-Encryption-CSE-
+# [Encryption] – RazerMS Client-Side-Encryption
 The Client-Side Encryption (CSE) integration lets you accept payments on your website while encrypting card data in your shopper's browser using the RMS encryption library.
 
 ## Before you begin
