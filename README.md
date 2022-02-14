@@ -14,7 +14,7 @@ To ensures that the call does not send unencrypted card data to your server, you
 
 ```html
 <script src="https://sandbox.merchant.razer.com/RMS/API/cse/checkout.js"></script>
-<form action="[payment_action]" method="POST" id="molpay-payment-form">
+<form action="[payment_action]" method="POST" id="payment-form">
   <input type="text" size="20" data-encrypted-name="PAN" placeholder="CC NUM" maxlength="16" required/>
   <input type="text" size="20" data-encrypted-name="CVV" placeholder="CVV" maxlength="3" required/>
   <input type="text" size="20" data-encrypted-name="EXPMONTH" placeholder="EXPMONTH [12]" maxlength="2" required/>
@@ -23,8 +23,8 @@ To ensures that the call does not send unencrypted card data to your server, you
 </form>
 <script type="text/javascript">
   var pub = "[public_key]";
-  var molpay = MOLPAY.encrypt( pub );
-  molpay.onSubmitEncryptForm('molpay-payment-form');
+  var encForm = CSE.encrypt( pub );
+  encForm.onSubmitEncryptForm('payment-form');
 </script>
 ```        
 ## Server Side
