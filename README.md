@@ -13,6 +13,7 @@ To ensures that the call does not send unencrypted card data to your server, you
 **Do not** use the `name` attribute.
 
 ```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://sandbox.merchant.razer.com/RMS/API/cse/checkout.js"></script>
 <form action="[payment_action]" method="POST" id="payment-form">
   <input type="text" size="20" data-encrypted-name="PAN" placeholder="CC NUM" maxlength="16" required/>
@@ -22,9 +23,11 @@ To ensures that the call does not send unencrypted card data to your server, you
   <input type="submit" value="Pay">
 </form>
 <script type="text/javascript">
-  var pub = "[public_key]";
-  var encForm = CSE.encrypt( pub );
-  encForm.onSubmitEncryptForm('payment-form');
+  $(document).on("submit", "form", function (e) {
+    var pub = "[public_key]";
+    var encForm = CSE.encrypt( pub );
+    encForm.onSubmitEncryptForm('payment-form');
+  }
 </script>
 ```        
 ## Server Side
