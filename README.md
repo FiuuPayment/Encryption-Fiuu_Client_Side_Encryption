@@ -27,7 +27,7 @@ To ensures that the call does not send unencrypted card data to your server, you
     var pub = "[public_key]";
     var encForm = CSE.encrypt( pub );
     encForm.onSubmitEncryptForm('payment-form');
-  }
+  })
 </script>
 ```        
 ## Server Side
