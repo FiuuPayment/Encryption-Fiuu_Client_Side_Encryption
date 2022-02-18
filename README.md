@@ -20,6 +20,8 @@ To ensures that the call does not send unencrypted card data to your server, you
   <input type="text" size="20" class='cc-cvv' data-encrypted-name="CVV" placeholder="CVV" maxlength="3" required/>
   <input type="text" size="20" class='cc-expiry' data-encrypted-name="EXPIRY" placeholder="MM/YYYY" maxlength="7" required/>
   <input type="submit" value="Pay">
+  <div id='errorMsg'>
+  </div> 
 </form>
 <script type="text/javascript">
   $(document).on("submit", "form", function (e) {
