@@ -16,17 +16,20 @@ To ensures that the call does not send unencrypted card data to your server, you
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://sandbox.merchant.razer.com/RMS/API/cse/checkout.js"></script>
 <form action="[payment_action]" method="POST" id="payment-form">
-  <input type="text" size="20" data-encrypted-name="PAN" placeholder="CC NUM" maxlength="16" required/>
-  <input type="text" size="20" data-encrypted-name="CVV" placeholder="CVV" maxlength="3" required/>
-  <input type="text" size="20" data-encrypted-name="EXPMONTH" placeholder="EXPMONTH [12]" maxlength="2" required/>
-  <input type="text" size="20" data-encrypted-name="EXPYEAR" placeholder="EXPYEAR [2020]" min="4" maxlength="4" required/>
+  <input type="text" size="20" class ='cc-number' data-encrypted-name="PAN" placeholder="CC NUM" maxlength="19" required/>
+  <input type="text" size="20" class='cc-cvv' data-encrypted-name="CVV" placeholder="CVV" maxlength="3" required/>
+  <input type="text" size="20" class='cc-expiry' data-encrypted-name="EXPIRY" placeholder="MM/YYYY" maxlength="7" required/>
   <input type="submit" value="Pay">
 </form>
 <script type="text/javascript">
   $(document).on("submit", "form", function (e) {
-    var pub = "[public_key]";
-    var encForm = CSE.encrypt( pub );
-    encForm.onSubmitEncryptForm('payment-form');
+    if(creditCardValidation() == true) {
+      var pub = "[public_key]";
+      var encForm = CSE.encrypt( pub );
+      encForm.onSubmitEncryptForm('payment-form');
+    } else {
+      e.preventDefault();
+    } 
   })
 </script>
 ```        
