@@ -39,6 +39,17 @@ To ensures that the call does not send unencrypted card data to your server, you
 ## Server Side
 From server, make an HTTP POST request to our Direct Server API endpoint. Please refer to our Direct Server API for payment request and response.
 
+
+## Resources
+
+- GitHub:     https://github.com/RazerMS
+- Website:    https://merchant.razer.com/
+- Twitter:    https://twitter.com/Razer_MS
+- YouTube:    https://www.youtube.com/c/RazerMerchantServices
+- Facebook:   https://www.facebook.com/RazerMerchantServices/
+- Instagram:  https://www.instagram.com/RazerMerchantServices/
+
+
 Issues
 ------------
 
