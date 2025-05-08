@@ -1,14 +1,14 @@
 
 # [Encryption] – Fiuu Client-Side-Encryption
 <img src="https://user-images.githubusercontent.com/38641542/157029625-e07deaa8-3adb-472f-a0e6-eb359d7a7636.jpg">
-The Client-Side Encryption (CSE) integration lets you accept payments on your website while encrypting card data in your shopper's browser using the RMS encryption library.
+The Client-Side Encryption (CSE) integration lets you accept payments on your website while encrypting card data in your shopper's browser using the Fiuu encryption library.
 
 ## Before you begin
 1) Make sure you have our merchant account.
-2) Get your public key from RMS.
+2) Get your public key from Fiuu.
 
 ## Client Side
-Start by creating a payment form integrated with the Client-Side Encryption (CSE) library. Ensure that your payment form includes the mandatory fields. You may replace the `[payment_action]` with your payment process URL and `[public_key]` with public key provided from RMS.
+Start by creating a payment form integrated with the Client-Side Encryption (CSE) library. Ensure that your payment form includes the mandatory fields. You may replace the `[payment_action]` with your payment process URL and `[public_key]` with public key provided from Fiuu.
 
 To ensures that the call does not send unencrypted card data to your server, you must encrypt card input fields by annotating them with the `data-encrypted-name` attribute.  
 **Do not** use the `name` attribute.
