@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Checkout Form</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+   </head>
+   <body>
+      <div id="header"></div>
+      <div class="container">
+      <h1>Order Summary </h1>
+        <table class="table">
+          <tr class="ordertable-head">
+            <td>Product</td>
+            <td>Price</td>
+            <td align="center">Quantity</td>
+            <td>Total</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="col-md-6">Office Space </div>
+              </div>
+            </td>
+            <td>MYR 1.10</td>
+            <td align="center">1</td>
+            <td>MYR 1.10</td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <hr style="margin:0" />
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="2">
+              <div class="row">
+                <div class="col-md-8">
+                </div>
+              </div>
+            </td>
+            <td>&nbsp;</td>
+            <td align="right"><strong>Service Tax</strong></td>
+            <td><strong>Free</strong></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td align="right"><strong>Sub Total</strong></td>
+            <td><strong>MYR 1.10</strong></td>
+          </tr>
+          <tr class="ordertable-total">
+            <td colspan="3" align="right">Order Total</td>
+            <td>MYR 1.10</td>
+          </tr>
+      </table>
+      <div class="clearfix"></div>
+      <hr />
+      <h1>Payment Method</h1>
+      <div class="row">
+        <div class="col-md-2 col-xs-6 marginbttm text-center">
+          <label class="hand"><img style="height:45px;" class="img-responsive" src="images/visaMaster.png" title="credit" data-toggle="modal" data-target="#cardModal"/></label>
+        </div>
+      </div>
+      <div class="modal fade" id="cardModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <form action="process.php" method="POST" id="molpay-payment-form">
+               <div class="form-group">
+                <input id="PAN" class="form-control cc-number" type="text" size="19" autocomplete="off" data-encrypted-name="PAN" placeholder="CC NUM" maxlength="19" required/>
+               </div>
+               <div class="form-group">
+                <input class="form-control cc-cvv" type="text" size="20" autocomplete="off" data-encrypted-name="CVV" placeholder="CVV" maxlength="3" required/>
+               </div>
+               <div class="form-group">
+                <input class="form-control cc-expiry" type="text" size="20" autocomplete="off" data-encrypted-name="EXPIRY" placeholder="MM/YYYY" maxlength="7" required/>
+               </div>
+               <div id='errorMsg'>
+               </div> 
+               <!--<div class="form-group">
+                <input class="form-control" type="text" size="20" autocomplete="off" data-encrypted-name="EXPYEAR" placeholder="EXPYEAR [2020]" min="4" maxlength="4" required/>
+               </div>-->
+               <div class="form-group text-right">
+                <input type="submit" id="placeOrder" class="btn btn-default" value="Pay">
+               </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://sandbox.merchant.razer.com/RMS/API/cse/checkout.js"></script>
+    <!--<script src="https://pay.merchant.razer.com/RMS/API/cse/checkout.js"></script>--> <!--Production URL-->
+    <script type="text/javascript">
+      $(document).on("submit", "form", function (e) {
+        if(creditCardValidation() == true) {
+          var pub = "-----BEGIN PUBLIC KEY-----<KEY HERE>-----END PUBLIC KEY-----";
+          var encForm = CSE.encrypt( pub );
+          encForm.onSubmitEncryptForm('molpay-payment-form');
+        } else {
+        e.preventDefault();
+        }
+      });
+    </script>
+
+   </body>
+</html>
