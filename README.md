@@ -39,6 +39,9 @@ To ensures that the call does not send unencrypted card data to your server, you
 ## Server Side
 From server, make an HTTP POST request to our Direct Server API endpoint. Please refer to our Direct Server API for payment request and response.
 
+## Demo
+
+https://github.com/FiuuPayment/Encryption-Fiuu_Client_Side_Encryption/tree/demo
 
 ## Resources
 - GitHub:     https://github.com/FiuuPayment
